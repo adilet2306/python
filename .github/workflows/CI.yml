@@ -15,3 +15,9 @@ jobs:
 
       - name: Docker build
         run: docker build -t karabalta75/python:1.0.0 .
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
